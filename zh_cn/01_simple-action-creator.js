@@ -25,19 +25,17 @@ var actionCreator = function() {
 console.log(actionCreator())
 // Output: { type: 'AN_ACTION' }
 
-// Ok, this works but it does not go anywhere...
-// What we need is to have this action be sent somewhere so that
-// anyone interested could know that something happened and could act accordingly.
-// We call this process "Dispatching an action".
+// 好，他运行起来了。。但是这啥也做不了，然而并没有卵用
+//  我们需要的是 这个action 能够发送到一个地方，这样的话能够让对他感兴趣的东东知道发生了什么，并让这些东东们做出相应的反应
+// 我们称这个过程为 "Dispatching an action" （发出一个action）
 
-// To dispatch an action we need... a dispatch function ("Captain obvious").
-// And to let anyone interested know that an action happened, we need a mechanism to register
-// subscribers.
-
-// So far here is the flow of our application:
+// 为了能够 "Dispatching an action" （发出一个action）  我们需要一个  dispatch function ("这不是废话嘛").
+//另外为了够让对他感兴趣的东东知道发生了什么，我们需要一种机制能够让这些东东注册，这样这个东东就成为了
+//这个action的订阅者(action 一旦dispatch，订阅者就能知道 )
+// 好，截至目前为止我们已经有这样的数据流了
 // ActionCreator -> Action
 
-// Read more about actions and action creators here:
+// 想要了解更多有关create action请看下面
 // http://rackt.org/redux/docs/recipes/ReducingBoilerplate.html
 
-// Go to next tutorial: 02_simple-subscriber.js
+// 转到下一个教程: 02_simple-subscriber.js
