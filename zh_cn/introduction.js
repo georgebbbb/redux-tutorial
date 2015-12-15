@@ -73,16 +73,16 @@
 
 // 然后 当 用flux以及它的单向数据流架构，上面的例子就变成这个样子了
 // 1) 用户点击按钮A
-// 2) a handler on button "A" triggers an action that is dispatched and produces a change on Store "A"
-// 3) since all other stores are also notified about the action, Store B can react to the same action too
-// 4) View "B" gets notified by the change in Stores A and B, and re-renders
+// 2) 按钮A的点击处理函数会dispatch 一个action 出去，然后使 Store "A"接到通知发生改变
+// 3) 用于 dispatch 出去的这个action也会通知其他的store，所以Store”B” 接到通知 也会做出相应的 改变
+// 4) Store "A"，Store”B” 的改变 通知了 View B，使View B 发生重新渲染
 
-// See how we avoid directly linking Store A to Store B? Each store can only be
-// modified by an action and nothing else. And once all stores have replied to an action,
-// views can finally update. So in the end, data always flows in one way:
+//所以知道我们如何防止Store A 和 Store B产生直接联系了吧 ?每一个store的修改只能通过action，
+//其他任何方式 都不可以的 （所以这样就阻止你 watch Store A而直接改变Store B）
+//一旦和这个 acition有关的所有store 的都做出响应的改变
+// views 最终也被更新了. 所以呢 数据只能沿着下面这条线传递:
 //     action -> store -> view -> action -> store -> view -> action -> ...
 
-// Just as we started our use case above from an action, let's start our tutorial with
-// actions and action creators.
+// 就像我们的用例是从action开始一样, 让我们的教程也从action和创建一个action开始吧
 
-// Go to next tutorial: 01_simple-action-creator.js
+// 看下个教程: 01_simple-action-creator.js
